@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شهداء مصر في ليبيا</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #121212; 
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+            overflow-x: hidden; 
+            opacity: 0;
+            transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
+
+        .container { 
+            width: 90%; 
+            margin: auto; 
+            max-width: 400px; 
+        }
+
+        .button { 
+            display: block; 
+            background: rgba(255, 0, 0, 0.8);
+            padding: 15px; 
+            margin: 10px 0; 
+            border-radius: 30px; 
+            text-decoration: none; 
+            color: #FFFFFF;  
+            font-size: 18px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: transform 0.3s, box-shadow 0.3s, opacity 1s ease-in-out;
+            opacity: 0;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+        }
+
+        .fade-in {
+            opacity: 1 !important;
+        }
+
+        .slide-out {
+            transform: translateX(-100%);
+            opacity: 0;
+            transition: transform 0.5s, opacity 0.5s;
+        }
+
+        .back-button {
+            background: rgba(0, 123, 255, 0.8);
+        }
+
+        /* زر تبديل الوضع */
+        .toggle-mode {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-mode:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* الوضع العادي */
+        .light-mode {
+            background-color: #f5f5f5;
+            color: black;
+        }
+
+        .light-mode .button {
+            background: rgba(0, 0, 255, 0.8);
+        }
+
+        .light-mode .button:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="toggle-mode" onclick="toggleMode()">🌙 الوضع الليلي</button>
+
+    <h1>شهداء مصر في ليبيا</h1>
+
+    <div class="container">
+        <a class="button" onclick="animateAndRedirect(this, 'matthew.html')">الشهيد ماثيو الأفريقي</a>
+        <a class="button" onclick="animateAndRedirect(this, 'tawadros.html')">الشهيد تواضروس يوسف تواضروس</a>
+        <a class="button" onclick="animateAndRedirect(this, 'magid.html')">الشهيد ماجد سليمان شحاتة</a>
+        <a class="button" onclick="animateAndRedirect(this, 'hany.html')">الشهيد هاني عبد المسيح صليب</a>
+        <a class="button" onclick="animateAndRedirect(this, 'ezzat.html')">الشهيد عزت بشري يوسف</a>
+        <a class="button" onclick="animateAndRedirect(this, 'malakfarag.html')">الشهيد ملاك فرج فرج إبراهيم</a>
+        <a class="button" onclick="animateAndRedirect(this, 'samuelwilson.html')">الشهيد صموئيل ألهم ولسن</a>
+        <a class="button" onclick="animateAndRedirect(this, 'malakibrahim.html')">الشهيد ملاك إبراهيم سنيوت</a>
+        <a class="button" onclick="animateAndRedirect(this, 'luka.html')">الشهيد لوقا نجاة أنيس</a>
+        <a class="button" onclick="animateAndRedirect(this, 'samih.html')">الشهيد سامح صلاح فاروق</a>
+        <a class="button" onclick="animateAndRedirect(this, 'milad.html')">الشهيد ميلاد مكين زكي</a>
+        <a class="button" onclick="animateAndRedirect(this, 'issam.html')">الشهيد عصام بدار سمير</a>
+        <a class="button" onclick="animateAndRedirect(this, 'youssef.html')">الشهيد يوسف شكري يونان</a>
+        <a class="button" onclick="animateAndRedirect(this, 'bishoy.html')">الشهيد بيشوي اسطفانوس كامل</a>
+        <a class="button" onclick="animateAndRedirect(this, 'samuel.html')">الشهيد صموئيل اسطفانوس كامل</a>
+        <a class="button" onclick="animateAndRedirect(this, 'abanoub.html')">الشهيد أبانوب عياد شحاتة</a>
+        <a class="button" onclick="animateAndRedirect(this, 'gargissamir.html')">الشهيد جرجس سمير مجلي</a>
+        <a class="button" onclick="animateAndRedirect(this, 'mina.html')">الشهيد مينا فايز عزيز</a>
+        <a class="button" onclick="animateAndRedirect(this, 'kerlos.html')">الشهيد كيرلس بشري فوزي</a>
+        <a class="button" onclick="animateAndRedirect(this, 'gaber.html')">الشهيد جابر منير عدلي</a>
+        <a class="button" onclick="animateAndRedirect(this, 'gargismilad.html')">الشهيد جرجس ميلاد سنيوت</a>
+
+        <a class="button back-button" onclick="animateAndRedirect(this, 'index.html')">🔙 رجوع إلى القائمة الرئيسية</a>
+    </div>
+
+    <script>
+        document.body.style.opacity = "1";
+
+        function animateAndRedirect(element, url) {
+            let buttons = document.querySelectorAll(".button");
+            buttons.forEach((btn) => btn.classList.add("slide-out"));
+            setTimeout(() => { window.location.href = url; }, 500);
+        }
+
+        window.onload = function () {
+            let buttons = document.querySelectorAll(".button");
+            buttons.forEach((button, index) => {
+                setTimeout(() => { button.classList.add("fade-in"); }, index * 200);
+            });
+
+            if (localStorage.getItem("mode") === "light") {
+                document.body.classList.add("light-mode");
+                document.querySelector(".toggle-mode").innerText = "🌙 الوضع الليلي";
+            }
+        };
+
+        function toggleMode() {
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+                localStorage.setItem("mode", "light");
+                document.querySelector(".toggle-mode").innerText = "🌙 الوضع الليلي";
+            } else {
+                localStorage.setItem("mode", "dark");
+                document.querySelector(".toggle-mode").innerText = "☀️ الوضع العادي";
+            }
+        }
+    </script>
+
+</body>
+</html>
